@@ -9,6 +9,10 @@ T = function (dims){
 	};
 }
 
+//Ho avuto problemi nel porting da pyplasm a plasm.js
+//poichè in pyplasm avevo usato SOLIDIFY e non ho fatto in tempo
+//a riscrivere tutti in piani in plasm.js
+
 var pointfloor = [[0,0],[0,6.85],[11.25,6.85],[11.25,0]]
 var cellsfloor = [[0,1,3],[3,2,1]];
 var floor = SIMPLICIAL_COMPLEX(pointfloor)(cellsfloor);
