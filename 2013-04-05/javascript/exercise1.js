@@ -51,24 +51,10 @@ S3=S2
 S2=S1
 S1=S0
 
-function (array) {
-      return array[index];
-    }
 
 GRID = SIMPLEX_GRID
 VIEW = DRAW
 NN = REPLICA
-
-function (n) {
-    return function (value) { 
-      var result = [];
-      var i;
-      for (i = 0; i < n; i++) {
-        result = result.concat(value);
-      }
-      return result;
-    };
-  }
 
 //Funzione che definisce un arco di circonferenza
 function arc(alpha,r,R){

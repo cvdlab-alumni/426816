@@ -1,11 +1,11 @@
-//Utility Functions
+//Utility functions
 
 //T(dims)(values)(object)
 
 T = function (dims) {
-	dims = dims.map(function(dim){
-		return dim - 1;
-	});
+  dims = dims.map(function(dim){
+    return dim - 1;
+  });
     return function (values) {
       return function (object) {
        return object.clone().translate(dims, values);
@@ -15,9 +15,9 @@ T = function (dims) {
 
 //R
 R = function (dims) {
-	dims = dims.map(function(dim){
-		return dim - 1;
-	});
+  dims = dims.map(function(dim){
+    return dim - 1;
+  });
     return function (angle) {
       return function (object) {
         return object.clone().rotate(dims, angle);
@@ -27,9 +27,19 @@ R = function (dims) {
 
 //S
 S = function (dims) {
-	dims = dims.map(function(dim){
-		return dim - 1;
-	});
+  dims = dims.map(function(dim){
+    return dim - 1;
+  });
+    return function (values) {
+      return function (object) {
+        return object.clone().scale(dims, values);
+      };
+    };
+  }
+function (dims) {
+  dims = dims.map(function(dim){
+    return dim - 1;
+  });
     return function (values) {
       return function (object) {
         return object.clone().scale(dims, values);
@@ -37,34 +47,26 @@ S = function (dims) {
     };
   }
 
-
-//Per scambiare le coordinate in pyplasm -> S1,S2,S3
-//Per scambiare le coordinate in Plasm.js -> S0,S1,S2
 S3=S2
 S2=S1
 S1=S0
 
-//Funzioni da pyplasm a Plasm.js
-GRID = SIMPLEXGRID
+
+GRID = SIMPLEX_GRID
 VIEW = DRAW
 NN = REPLICA
 
-//arco di circonferenza: il dominio invece che da 0 a 2*PI, sarà tra 0 e alpha (angolo desiderato)
+//Funzione che definisce un arco di circonferenza
 function arc(alpha,r,R){
-	var domain = DOMAIN([[0,alpha], [r,R]])([36,1]);
-	var mapping = function(v){
-		var a = v[0];
-		var r = v[1];
-		return [r*COS(a), r*SIN(a)];
-	};
-	var model = MAP(mapping)(domain);
-	return model;
+  var domain = DOMAIN([[0,alpha], [r,R]])([36,1]);
+  var mapping = function(v){
+    var a = v[0];
+    var r = v[1];
+    return [r*COS(a), r*SIN(a)];
+  };
+  var model = MAP(mapping)(domain);
+  return model;
 };
-DRAW(arc(PI/3,2,3));
-
-//rnd
-AA(T([1,2]))([p1,p2,p3,p4]) //ritorna una lista di tensori di traslazione
-model = STRUCT(CONS(AA(T([1,2]))([p1,p2,p3,p4])(object)) //object è l'oggetto da replicare random
 
 
 //Exercise5
