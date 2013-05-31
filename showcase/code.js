@@ -312,9 +312,9 @@ var nosepieces = COLOR([1,1,0,0.8])(STRUCT([nosepiece_right,nosepiece_left]));
 
 //final model
 var model = STRUCT([surf_tot_right,
-					surf_tot_left,
-					nosepieces,
-					pin_left,
-					pin_right,
-					sidepiece_left,
-					sidepiece_right]);
+		    surf_tot_left,
+		    nosepieces,
+		    pin_left,
+		    pin_right,
+		    sidepiece_left,
+		    sidepiece_right]);
