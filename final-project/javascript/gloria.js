@@ -84,4 +84,4 @@ var light = COLOR([1,1,1,0.8])(T([2])([1])(STRUCT([SURFACE(q1),SURFACE(q2)])));
 
 var gloria = STRUCT([firstline,secondline,cyl1,cyl2,cyl3,light]);
 
-DARW(gloria);
+DRAW(gloria);
