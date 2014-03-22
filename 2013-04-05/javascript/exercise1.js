@@ -36,21 +36,10 @@ S = function (dims) {
       };
     };
   }
-function (dims) {
-	dims = dims.map(function(dim){
-		return dim - 1;
-	});
-    return function (values) {
-      return function (object) {
-        return object.clone().scale(dims, values);
-      };
-    };
-  }
 
 S3=S2
 S2=S1
 S1=S0
-
 
 GRID = SIMPLEX_GRID
 VIEW = DRAW
